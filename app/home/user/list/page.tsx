@@ -53,24 +53,24 @@ export default async function WatchList() {
                   width={800}
                   height={800}
                   src={movie.Movie?.imageString as string}
-                  alt={movie?.Movie.title as string}
+                  alt={movie?.Movie?.title as string}
                   className="rounded-lg -z-10 absolute w-full h-full object-cover"
                 />
                 <MovieCard
-                  movieId={movie.Movie?.id}
-                  overview={movie.Movie?.overview}
-                  title={movie.Movie?.title}
+                  movieId={movie.Movie?.id as number}
+                  overview={movie.Movie?.overview as string}
+                  title={movie.Movie?.title as string}
                   watchList={
                     (movie.Movie?.WatchLists.length as number) > 0
                       ? true
                       : false
                   }
-                  youtubeUrl={movie.Movie?.youtubeString}
-                  wachtListId={movie.Movie?.WatchLists[0]?.id}
-                  key={movie.Movie?.id}
-                  age={movie.Movie?.age}
-                  time={movie.Movie?.duration}
-                  year={movie.Movie?.release}
+                  youtubeUrl={movie.Movie?.youtubeString as string}
+                  wachtListId={movie.Movie?.WatchLists[0]?.id as string}
+                  key={movie.Movie?.id as number}
+                  age={movie.Movie?.age as number }
+                  time={movie.Movie?.duration as number}
+                  year={movie.Movie?.release as number}
                 />
               </div>
             </div>
